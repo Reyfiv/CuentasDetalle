@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CuentasDetalle.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace CuentasDetalle
         public PrincipalForm()
         {
             InitializeComponent();
+        }
+
+
+        private void cuentasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            rPresupuestos rPresupuesto = new rPresupuestos();
+            rPresupuesto.Show();
         }
     }
 }
