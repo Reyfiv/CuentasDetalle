@@ -19,8 +19,8 @@ namespace CuentasDetalle.UI.Registros
         public rCuentas()
         {
             InitializeComponent();
-            if (paso == 1)
-                LlenaCombo();
+            //if (paso == 1)
+               // LlenaCombo();
         }
 
         private void LlenaCombo()
@@ -39,13 +39,11 @@ namespace CuentasDetalle.UI.Registros
 
         private Cuentas LlenaClase()
         {
-            Cuentas cuentas = new Cuentas()
-            {
-                CuentaId = Convert.ToInt32(CuentaIdNumericUpDown.Value),
-                Descripcion = DescripcionTextBox.Text,
-                TipoId = (int)TipoComboBox.SelectedValue,
-                Monto = Convert.ToDecimal(MontoNumericUpDown.Value)
-            };
+            Cuentas cuentas = new Cuentas();
+            cuentas.CuentaId = Convert.ToInt32(CuentaIdNumericUpDown.Value);
+            cuentas.Descripcion = DescripcionTextBox.Text;
+            cuentas.TipoId = (int)TipoComboBox.SelectedValue;
+            cuentas.Monto = Convert.ToDecimal(MontoNumericUpDown.Value);
             return cuentas;
         }
 
@@ -74,11 +72,6 @@ namespace CuentasDetalle.UI.Registros
                 errorProvider1.SetError(DescripcionTextBox, "La Descripcion esta Vacia");
                 paso = false;
             }
-            if (MontoNumericUpDown.Value == 0)
-            {
-                errorProvider1.SetError(MontoNumericUpDown, "El Monto esta en 0");
-                paso = false;
-            }
             return paso;
         }
 
@@ -92,12 +85,13 @@ namespace CuentasDetalle.UI.Registros
         {
             Cuentas cuenta;
             bool paso = false;
-            if (Validar())
-            {
-                MessageBox.Show("Favor revisar todos los campos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             cuenta = LlenaClase();
+            //if (Validar())
+            //{
+              //  MessageBox.Show("Favor revisar todos los campos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // return;
+            //}
+            
 
             if (CuentaIdNumericUpDown.Value == 0)
                 paso = BLL.CuentasBLL.Guardar(cuenta);
@@ -144,6 +138,12 @@ namespace CuentasDetalle.UI.Registros
         {
             rTipoCuentas rTipoCuentas = new rTipoCuentas();
             rTipoCuentas.ShowDialog();
+            LlenaCombo();
+        }
+
+        private void rCuentas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

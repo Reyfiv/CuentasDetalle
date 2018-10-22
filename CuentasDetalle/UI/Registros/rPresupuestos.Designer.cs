@@ -35,7 +35,6 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,9 +49,10 @@
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.MontoDataGridView = new System.Windows.Forms.DataGridView();
             this.AgregarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // MasCuentasButton
@@ -130,15 +130,10 @@
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // FechaDateTimePicker
             // 
             this.FechaDateTimePicker.CustomFormat = "dd/MM/yy";
             this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.errorProvider1.SetIconAlignment(this.FechaDateTimePicker, System.Windows.Forms.ErrorIconAlignment.TopLeft);
             this.FechaDateTimePicker.Location = new System.Drawing.Point(281, 24);
             this.FechaDateTimePicker.Name = "FechaDateTimePicker";
             this.FechaDateTimePicker.Size = new System.Drawing.Size(87, 20);
@@ -254,6 +249,10 @@
             this.AgregarButton.UseVisualStyleBackColor = true;
             this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // rPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,9 +280,9 @@
             this.Controls.Add(this.BuscarButton);
             this.Name = "rPresupuestos";
             this.Text = "rPresupuestos";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +296,6 @@
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button RemoverFilaButton;
         private System.Windows.Forms.Button MasCuentasButton;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -312,5 +310,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button AgregarButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

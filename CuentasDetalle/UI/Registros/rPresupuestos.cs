@@ -117,6 +117,7 @@ namespace CuentasDetalle.UI.Registros
         {
             rCuentas rCuentas = new rCuentas();
             rCuentas.ShowDialog();
+            LlenaCombo();
         }
 
         private void AgregarButton_Click(object sender, EventArgs e)
@@ -133,8 +134,8 @@ namespace CuentasDetalle.UI.Registros
             this.Detalle.Add(
                 new PresupuestoDetalle(
                     id: 0,
-                    presupuestoId: (int)IdNumericUpDown.Value,
-                    cuentaId : CuentaComboBox.Text,
+                    presupuestoId: 0,
+                    cuentaId : 0,
                     monto: (decimal)Convert.ToSingle(MontoTextBox.Text)
                     ));
             CargarGrid();

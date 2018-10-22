@@ -12,7 +12,7 @@ namespace CuentasDetalle.BLL
 {
     public class TipoCuentasBLL
     {
-        public static bool Guradar(TipoCuentas tipo)
+        public static bool Guardar(TipoCuentas tipo)
         {
             bool paso = false;
             Contexto contexto = new Contexto();

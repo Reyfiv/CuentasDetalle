@@ -34,7 +34,6 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BucarButton = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,9 +42,10 @@
             this.TipoComboBox = new System.Windows.Forms.ComboBox();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.MontoNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CuentaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontoNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // MasTipoCuentasButton
@@ -109,10 +109,6 @@
             this.BucarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BucarButton.UseVisualStyleBackColor = true;
             this.BucarButton.Click += new System.EventHandler(this.BucarButton_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // label1
             // 
@@ -184,6 +180,10 @@
             this.MontoNumericUpDown.Size = new System.Drawing.Size(153, 20);
             this.MontoNumericUpDown.TabIndex = 19;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // rCuentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,9 +204,10 @@
             this.Controls.Add(this.BucarButton);
             this.Name = "rCuentas";
             this.Text = "rCuentas";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.Load += new System.EventHandler(this.rCuentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CuentaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontoNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,7 +219,6 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button BucarButton;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -227,5 +227,6 @@
         private System.Windows.Forms.ComboBox TipoComboBox;
         private System.Windows.Forms.NumericUpDown CuentaIdNumericUpDown;
         private System.Windows.Forms.NumericUpDown MontoNumericUpDown;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
